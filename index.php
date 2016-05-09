@@ -1,7 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: findomba
- * Date: 2016-05-09
- * Time: 09:29
- */
+
+?>
+
+<?php require_once ('views/page_top.php'); ?>
+<div id="main">
+    <!--Code html spécifique -->
+</div>
+<?php require_once ('views/page_bottom.php'); ?>
+
