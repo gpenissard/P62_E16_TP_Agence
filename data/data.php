@@ -1,7 +1,8 @@
 <?php
 /**
  * Tableau principal des données du site
- * (suivant le projet) Chaque item doit contenir au minimul les champs suivants
+ * Les clefs des items sont leurs "id" (un numéro)
+ * (suivant le projet) Chaque item doit contenir au minimum les champs suivants
  * - nom
  * - categorie
  * - etc
