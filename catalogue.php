@@ -7,11 +7,12 @@
     <?php /*Affichage du catalogue*/ ?>
     <ul>
         <?php foreach ($data as $id => $item) { ?>
-            <li>
-                <div>
+            <li><a href="detail.php?item_id=<?= $id ?>">
+                    <div>
                     <p><?= $item['nom'] ?>, <span class=".prix"><?= $item['prix'] ?></span></p>
                     <img src="<?= $item['photo'] ?>" alt=""/>
                 </div>
+                </a>
             </li>
         <?php } ?>
     </ul>
