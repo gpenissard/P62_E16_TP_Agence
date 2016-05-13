@@ -1,5 +1,7 @@
 <?php
 require_once('data/data.php');
+require_once('utils/login_out.php');
+
 // Est-ce qu'il y a une categorie (cat_id)  présente dans l'url ?
 $cat_id = null; // Initialiser u premier des items
 if (array_key_exists('cat_id', $_GET) && array_key_exists($_GET['cat_id'], $categories)) {

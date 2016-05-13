@@ -1,5 +1,7 @@
 <?php
 require_once('data/data.php');
+require_once('utils/login_out.php');
+
 //    var_dump($_GET);
 $item_id = 0; // Initialiser au premier des items
 if (array_key_exists('item_id', $_GET)) {
