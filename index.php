@@ -2,6 +2,7 @@
 require_once('defines.php');
 require_once('db/conn.php');
 require_once('utils/login_out.php');
+require_once('utils/panier.php');
 $categories = get_categories();
 //var_dump($categories);
 

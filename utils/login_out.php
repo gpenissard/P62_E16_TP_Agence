@@ -5,7 +5,11 @@ $user_is_loggedIn = false; // Indique que l'utilisateur est connecté ou ne l'es
 $username = null; // Valeur du username
 $password = null; // Valeur du password
 
-session_start(); // Ne plus le mettre ailleurs si le script courant est sur toutes les pages
+// Activation des sessions (si pas déjà activées)
+if (PHP_SESSION_NONE === session_status()) {
+    session_start();
+}
+
  // L'utilisateur est-il en train de se connecter ?
 if (array_key_exists('connect', $_POST)
     && array_key_exists('username', $_POST)

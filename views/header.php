@@ -9,6 +9,10 @@
 <?php } ?>
 </ul>
 <!-- Formulaire de login / logout  -->
-<?php
-require_once('login_out_form.php');
-?>
+<?php require_once('login_out_form.php'); ?>
+<!-- Panier -->
+<details id="card">
+    <summary>Votre panier (<span class="card_count"><?= count($panier)?></span>)</summary>
+    <ul></ul><!-- Liste des items de panier -->
+</details>
+

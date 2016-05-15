@@ -2,6 +2,7 @@
 require_once('defines.php');
 require_once('db/conn.php');
 require_once('utils/login_out.php');
+require_once('utils/panier.php');
 
 $categories = get_categories();
 //var_dump($categories);
@@ -36,7 +37,7 @@ $trucs = get_truc_list($cat_id);
             ?>
             <li><a href="detail.php?item_id=<?= $id ?>">
                     <div>
-                        <p><?= $truc['name'] ?>
+                        <p><?= utf8_encode($truc['name']) ?>
                             , <span class=".prix"><?= $truc['price'] ?></span>
                             , <span class=".categorie"><?= $categories[$truc['category_id']]['name'] ?></span>
                         </p>
