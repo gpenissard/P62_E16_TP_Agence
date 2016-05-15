@@ -5,22 +5,22 @@ require_once('utils/login_out.php');
 require_once('utils/panier.php');
 
 //    var_dump($_GET);
-$id_truc = 0; // Initialiser au premier des items
+$id_article = 0; // Initialiser au premier des items
 if (array_key_exists('item_id', $_GET)) {
-    $id_truc = $_GET['item_id'];
+    $id_article = $_GET['item_id'];
 }
 // Il faut vérifier que la valeur de l'id est bonne
-$truc = get_truc($id_truc);
+$article = get_truc($id_article);
 ?>
 <?php require_once ('views/page_top.php'); ?>
 <div id="main">
-    <?php if (is_null($truc)) { ?>
+    <?php if (is_null($article)) { ?>
         <p>Ce truc n'existe pas !</p>
     <?php } else { ?>
         <div>
-            <p><?= $truc['name'] ?>, <span class=".prix"><?= $truc['price'] ?></span></p>
-            <div id="card_handling"><input type="number" class="card_item_qty" data-card-item-id="<?= $id_truc ?>" value="<?= array_key_exists($id_truc, $panier) ? $panier[$id_truc][PSESS_CARD_QTY] : 0?>" min="0"/></div>
-            <img src="<?= IMAGE_PATH . '/' . $truc['picture'] ?>" alt=""/>
+            <p><?= utf8_encode($article['name']) ?>, <span class=".prix"><?= $article['price'] ?></span></p>
+            <div id="card_handling"><input type="number" class="card_item_qty" data-card-item-id="<?= $id_article ?>" value="<?= array_key_exists($id_article, $panier) ? $panier[$id_article][PSESS_CARD_QTY] : 0?>" min="0"/></div>
+            <img src="<?= IMAGE_PATH . '/' . $article['picture'] ?>" alt=""/>
         </div>
     <?php } ?>
     <!--Code html spécifique -->
