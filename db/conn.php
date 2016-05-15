@@ -1,11 +1,7 @@
 <?php
-// Connection
-// Constantes rassemblant les infos de connexion et de schéma de la DB
-define('CONN_HOST', '127.0.0.1');
-define('CONN_USER', 'root');
-define('CONN_PWD', '');
-define('DBNAME', 'P62_DBkitDem_lite');
+require_once('db/defines.php');
 
+// Connection
 $mysqli = new mysqli(CONN_HOST, CONN_USER, CONN_PWD, DBNAME);
 if ($mysqli->connect_errno) {
     echo "Echec lors de la connexion à MySQL : (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
