@@ -1,5 +1,4 @@
 <?php
-require_once('data/data.php');
 require_once('utils/login_out.php');
 
 ?>

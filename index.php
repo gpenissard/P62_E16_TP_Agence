@@ -1,6 +1,9 @@
 <?php
-require_once('data/data.php');
+require_once('defines.php');
+require_once('db/conn.php');
 require_once('utils/login_out.php');
+$categories = get_categories();
+//var_dump($categories);
 
 ?>
 
@@ -9,8 +12,8 @@ require_once('utils/login_out.php');
     <!-- Liens vers les categories du catalogue -->
     <div id="liens_categories">
         <ul>
-            <?php foreach ($categories as $cat_id => $categorie) { ?>
-                <li><a href="catalogue.php?cat_id=<?= $cat_id ?>"><?= $categorie ?></a></li>
+            <?php foreach ($categories as $cat) { ?>
+                <li><a href="catalogue.php?cat_id=<?= $cat['id'] ?>"><?= $cat['name'] ?></a></li>
             <?php } ?>
         </ul>
 
