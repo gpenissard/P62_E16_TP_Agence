@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <title>Site petit projet</title>
 </head>
 <body>
