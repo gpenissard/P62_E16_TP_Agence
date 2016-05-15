@@ -3,10 +3,10 @@ header("Content-type: text/javascript; charset=utf-8");
 header("Access-Control-Allow-Origin: *");
 //response.__setitem__("Content-type", "application/json")
 
-require_once('../db/conn.php');
-require_once('../utils/login_out.php');
-require_once('../utils/panier.php');
-
+//exit('icilolo');
+require_once('../defines.php');
+require_once(ROOT_DIR . 'db/conn.php');
+require_once(ROOT_DIR . 'utils/panier.php');
 //$panier=array(); // Ne décommenter (1 exécution) que pour VIDER le panier
 
 // Les paramètres de la queryString

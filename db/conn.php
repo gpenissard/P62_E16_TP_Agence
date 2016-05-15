@@ -1,5 +1,5 @@
 <?php
-require_once('db/defines.php');
+require_once(ROOT_DIR . 'db/defines.php');
 
 // Connection
 $mysqli = new mysqli(CONN_HOST, CONN_USER, CONN_PWD, DBNAME);
