@@ -5,7 +5,6 @@ header("Access-Control-Allow-Origin: *");
 
 require_once('../db/conn.php');
 require_once('../utils/login_out.php');
-require_once('../db/conn.php');
 require_once('../utils/panier.php');
 
 //$panier=array(); // Ne décommenter (1 exécution) que pour VIDER le panier

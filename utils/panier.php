@@ -5,7 +5,9 @@ define('PSESS_CARD_QTY', 'qty');
 define('PSESS_CARD_PRICE', 'price');
 
 // Activation des sessions (si pas déjà activées)
-if (PHP_SESSION_NONE === session_status()) {
+// Activation des sessions (si pas déjà activées)
+require_once('common.php');
+if ( ! is_session_started()) {
     session_start();
 }
 

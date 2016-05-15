@@ -6,7 +6,8 @@ $username = null; // Valeur du username
 $password = null; // Valeur du password
 
 // Activation des sessions (si pas déjà activées)
-if (PHP_SESSION_NONE === session_status()) {
+require_once('common.php');
+if ( ! is_session_started()) {
     session_start();
 }
 
