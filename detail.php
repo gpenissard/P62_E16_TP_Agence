@@ -18,7 +18,7 @@ $article = get_article($id_article);
         <p>Cet article n'existe pas !</p>
     <?php } else { ?>
         <div>
-            <p><?= utf8_encode($article['name']) ?>, <span class=".prix"><?= $article['price'] ?></span></p>
+            <p><?= get_right_encoding($article['name']) ?>, <span class=".prix"><?= $article['price'] ?></span></p>
             <div id="card_handling"><input type="number" class="card_item_qty" data-card-item-id="<?= $id_article ?>" value="<?= array_key_exists($id_article, $panier) ? $panier[$id_article][PSESS_CARD_QTY] : 0?>" min="0"/></div>
             <img src="<?= IMAGE_PATH . '/' . $article['picture'] ?>" alt=""/>
         </div>

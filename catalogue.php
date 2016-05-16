@@ -37,7 +37,7 @@ $articles = get_article_list($cat_id);
             ?>
             <li><a href="detail.php?item_id=<?= $id ?>">
                     <div>
-                        <p><?= utf8_encode($article['name']) ?>
+                        <p><?= get_right_encoding($article['name']) ?>
                             , <span class=".prix"><?= $article['price'] ?></span>
                             , <span class=".categorie"><?= $categories[$article['category_id']]['name'] ?></span>
                         </p>
