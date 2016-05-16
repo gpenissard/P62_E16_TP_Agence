@@ -33,7 +33,7 @@ if (array_key_exists(PGET_OPERATION, $_GET)) { // Il y a un paramètre 'action' 
                     } else {
                         // Si l'article n'est pas déj`dans le panier, on l'y ajoute
                         if ( ! array_key_exists($id_article, $panier)) {
-                            $panier[$id_article][PSESS_CARD_NAME] = utf8_encode($article['name']);
+                            $panier[$id_article][PSESS_CARD_NAME] = get_right_encoding($article['name']);
                             $panier[$id_article][PSESS_CARD_PRICE] = $article['price'];
                         }
                         // Maj quantité
