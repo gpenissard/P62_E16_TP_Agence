@@ -5,7 +5,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8"/>
-    <title>Site petit projet</title>
+    <title><?= SITE_NAME ?></title>
 </head>
 <body>
 <div id="wrapper">
