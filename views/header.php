@@ -1,5 +1,6 @@
 <?php
 ?>
+<header>
 <!-- Menu -->
 <ul>
     <li><a href="index.php">Accueil</a></li>
@@ -15,4 +16,4 @@
     <summary>Votre panier (<span class="card_count"><?= count($panier)?></span>)</summary>
     <ul></ul><!-- Liste des items de panier -->
 </details>
-
+</header>

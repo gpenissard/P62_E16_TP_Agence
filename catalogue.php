@@ -30,12 +30,12 @@ $articles = get_article_list($cat_id);
         echo "<p>Cette catégorie est vide !.</p>";
     } else {
     ?>
-    <ul>
+    <ul id="catalogue">
         <?php
         foreach ($articles as $id => $article) {
             //var_dump($article);
             ?>
-            <li><a href="detail.php?item_id=<?= $id ?>">
+            <li class="article"><a href="detail.php?item_id=<?= $id ?>">
                     <div>
                         <p><?= get_right_encoding($article['name']) ?>
                             , <span class=".prix"><?= $article['price'] ?></span>

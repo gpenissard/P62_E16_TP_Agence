@@ -6,9 +6,9 @@
         </form>
     <?php } else { ?>
         <form method="post">
-            <input type="text" name="username" id="username" value="<?php echo isset($username) ? $username : ''; ?>"/><br>
-            <input type="password" name="password" id="password" value="<?php echo isset($password) ? $password : ''; ?>"/><br>
-            <input type="submit" name="connect" id="se_connecter" value="Connexion"/>
+            <input type="text" class="small" name="username" id="username" value="<?php echo isset($username) ? $username : ''; ?>"/>
+            <input type="password" class="small" name="password" id="password" value="<?php echo isset($password) ? $password : ''; ?>"/>
+            <input type="submit" class="small" name="connect" id="se_connecter" value="Connexion"/>
         </form>
     <?php } ?>
 </div>
