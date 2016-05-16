@@ -23,29 +23,30 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `truc`
+-- Structure de la table `article`
 --
-CREATE TABLE IF NOT EXISTS `truc` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id (clef principale) du truc',
-  `name` varchar(256) NOT NULL COMMENT 'Nom du truc ',
-  `category_id` int(11) DEFAULT NULL COMMENT 'Catégorie à laquelle appartient le truc',
-  `description` varchar(1024) NOT NULL COMMENT 'Description du truc',
-  `price` decimal(8,2) DEFAULT NULL COMMENT 'Prix du truc',
-  `is_online` tinyint(1) NOT NULL DEFAULT '1' COMMENT 'Indique si le truc est affiché ou pas',
+CREATE TABLE IF NOT EXISTS `article` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id (clef principale) de l''article',
+  `name` varchar(256) NOT NULL COMMENT 'Nom de l''article ',
+  `category_id` int(11) DEFAULT NULL COMMENT 'Catégorie à laquelle appartient l''article',
+  `description` varchar(1024) NOT NULL COMMENT 'Description de l''article',
+  `picture` varchar(128) NOT NULL COMMENT 'Photo de l''article',
+  `price` decimal(8,2) DEFAULT NULL COMMENT 'Prix de l''article',
+  `is_online` tinyint(1) NOT NULL DEFAULT '1' COMMENT 'Indique si l''article est affiché ou pas',
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Table des trucs (forfaits, livres, metériel, etc...) du site' AUTO_INCREMENT=52 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Table des articles (forfaits, livres, metériel, etc...) du site' AUTO_INCREMENT=52 ;
 
 --
--- Contenu de la table `truc`
+-- Contenu de la table `article`
 --
 
-INSERT INTO `truc` (`id`, `name`, `category_id`, `description`, `price`, `is_online`) VALUES
-(1, 'Céline au Centre Bell', 1, 'Bla bla bla en HTML', '159.99', 1),
-(2, 'Grand prix cycliste de Montréal', 2, 'Bla bla bla en HTML', '98.90', 1),
-(3, 'Lady Gaga au centre Bell', 1, 'Bla bla bla en HTML', '134.00', 1),
-(4, 'Formule 1 au Parc Jean Drapeau', 2, 'Bla bla bla en HTML', '225.00', 1),
-(5, 'Concert des Fifty Six', 1, 'Bla bla bla en HTML', '112.00', 1);
+INSERT INTO `article` (`id`, `name`, `category_id`, `description`, `picture`, `price`, `is_online`) VALUES
+(1, 'Céline au Centre Bell', 1, 'Bla bla bla en HTML', 'photo_article.jpg', '159.99', 1),
+(2, 'Grand prix cycliste de Montréal', 2, 'Bla bla bla en HTML', 'photo_article.jpg', '98.90', 1),
+(3, 'Lady Gaga au centre Bell', 1, 'Bla bla bla en HTML', 'photo_article.jpg', '134.00', 1),
+(4, 'Formule 1 au Parc Jean Drapeau', 2, 'Bla bla bla en HTML', 'photo_article.jpg', '225.00', 1),
+(5, 'Concert des Fifty Six', 1, 'Bla bla bla en HTML', 'photo_article.jpg', '112.00', 1);
 
 -- --------------------------------------------------------
 
@@ -53,17 +54,17 @@ INSERT INTO `truc` (`id`, `name`, `category_id`, `description`, `price`, `is_onl
 -- Structure de la table `item_category`
 --
 
-CREATE TABLE IF NOT EXISTS `truc_category` (
+CREATE TABLE IF NOT EXISTS `article_category` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id (clef principale) catégorie',
   `name` varchar(256) NOT NULL COMMENT 'Nom de la catégorie',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Table des catégories des trucs du site' AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Table des catégories des articles du site' AUTO_INCREMENT=4 ;
 
 --
 -- Contenu de la table `item_category`
 --
 
-INSERT INTO `truc_category` (`id`, `name`) VALUES
+INSERT INTO `article_category` (`id`, `name`) VALUES
 (1, 'Musique'),
 (2, 'Sport'),
 (3, 'Sciences');
@@ -102,8 +103,8 @@ INSERT INTO `user` (`id`, `username`, `password_hash`, `firstname`, `lastname`, 
 --
 -- Contraintes pour la table `item`
 --
-ALTER TABLE `truc`
-  ADD CONSTRAINT `truc_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `truc_category` (`id`);
+ALTER TABLE `article`
+  ADD CONSTRAINT `article_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `article_category` (`id`);
 
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

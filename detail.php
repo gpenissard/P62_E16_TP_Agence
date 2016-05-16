@@ -10,12 +10,12 @@ if (array_key_exists('item_id', $_GET)) {
     $id_article = $_GET['item_id'];
 }
 // Il faut vérifier que la valeur de l'id est bonne
-$article = get_truc($id_article);
+$article = get_article($id_article);
 ?>
 <?php require_once ('views/page_top.php'); ?>
 <div id="main">
     <?php if (is_null($article)) { ?>
-        <p>Ce truc n'existe pas !</p>
+        <p>Cet article n'existe pas !</p>
     <?php } else { ?>
         <div>
             <p><?= utf8_encode($article['name']) ?>, <span class=".prix"><?= $article['price'] ?></span></p>

@@ -8,15 +8,15 @@ if ($mysqli->connect_errno) {
 }
 
 /**
- * Fournit tous les trucs enregistrés dans la table truc
- * Si un id de catégorie est fourni, fournit seulement les trucs de cette catégorie
+ * Fournit tous les articles enregistrés dans la table article
+ * Si un id de catégorie est fourni, fournit seulement les articles de cette catégorie
  * @param bool $cat_id
  * @return array
  */
-function get_truc_list($cat_id=false) {
+function get_article_list($cat_id=false) {
     global $mysqli;
-// Sélectionner tous les trucs (toutes les colonnes)
-    $queryStr = 'SELECT * FROM truc';
+// Sélectionner tous les articles (toutes les colonnes)
+    $queryStr = 'SELECT * FROM article';
     // Si la catégorie est précisée, on ajoute une clause WHERE dans la requête
     if (false !== $cat_id) {
         $queryStr .= " WHERE `category_id` = " . $mysqli->real_escape_string($cat_id);
@@ -26,42 +26,42 @@ function get_truc_list($cat_id=false) {
 // Récupération des données
     $resultat = array();
     if ($res && ($res->num_rows > 0)) {
-        while ($truc = $res->fetch_assoc()) {
-            $resultat[$truc['id']] = $truc;
+        while ($article = $res->fetch_assoc()) {
+            $resultat[$article['id']] = $article;
         };
     };
     return $resultat;
 }
 
 /**
- * Fournit un truc de la table truc à partir de son id
+ * Fournit un article de la table article à partir de son id
  * @param int $id
  * @return array
  */
-function get_truc($id) {
+function get_article($id) {
     global $mysqli;
-// Sélectionner tous les trucs (toutes les colonnes)
-    $queryStr = 'SELECT * FROM truc WHERE `id` = ' . $mysqli->real_escape_string($id);
+// Sélectionner tous les articles (toutes les colonnes)
+    $queryStr = 'SELECT * FROM article WHERE `id` = ' . $mysqli->real_escape_string($id);
 // Execution de la requête (un select)
     $res = $mysqli->query($queryStr);
 // Récupération des données
     $resultat = null;
     if ($res && ($res->num_rows > 0)) {
-        while ($truc = $res->fetch_assoc()) {
-            $resultat = $truc;
+        while ($article = $res->fetch_assoc()) {
+            $resultat = $article;
         };
     };
     return $resultat;
 }
 
 /**
- * Fournit toutes les catégories de trucs enregistrées dans la table truc_category
+ * Fournit toutes les catégories de articles enregistrées dans la table article_category
  * @return array
  */
 function get_categories() {
     global $mysqli;
 // Sélectionner toutes les categories (toutes les colonnes)
-    $queryStr = 'SELECT * FROM truc_category';
+    $queryStr = 'SELECT * FROM article_category';
 // Execution de la requête (un select)
     $res = $mysqli->query($queryStr);
 // Récupération des données

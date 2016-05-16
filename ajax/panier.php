@@ -27,7 +27,7 @@ if (array_key_exists(PGET_OPERATION, $_GET)) { // Il y a un paramètre 'action' 
             if (array_key_exists(PGET_QTY_ARTICLE, $_GET) && array_key_exists(PGET_ID_ARTICLE, $_GET)) {
                 $id_article = $_GET[PGET_ID_ARTICLE];
                 // Est-ce qu'il existe un article ayant cet id
-                if ( ! is_null($article = get_truc($id_article)) && in_array($_GET[PGET_QTY_ARTICLE], range(0,10))) {
+                if ( ! is_null($article = get_article($id_article)) && in_array($_GET[PGET_QTY_ARTICLE], range(0,10))) {
                     if (0 == $_GET[PGET_QTY_ARTICLE]) {
                         unset($panier[$id_article]);
                     } else {

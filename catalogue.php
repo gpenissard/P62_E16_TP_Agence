@@ -11,8 +11,8 @@ $cat_id = false; // Initialiser u premier des items
 if (array_key_exists('cat_id', $_GET) && array_key_exists($_GET['cat_id'], $categories)) {
     $cat_id = $_GET['cat_id'];
 }
-$trucs = get_truc_list($cat_id);
-//var_dump($trucs);
+$articles = get_article_list($cat_id);
+//var_dump($articles);
 
 ?>
 <?php require_once('views/page_top.php'); ?>
@@ -26,22 +26,22 @@ $trucs = get_truc_list($cat_id);
 
     <?php
     /* Affichage du catalogue */
-    if (empty($trucs)) {
+    if (empty($articles)) {
         echo "<p>Cette catégorie est vide !.</p>";
     } else {
     ?>
     <ul>
         <?php
-        foreach ($trucs as $id => $truc) {
-            //var_dump($truc);
+        foreach ($articles as $id => $article) {
+            //var_dump($article);
             ?>
             <li><a href="detail.php?item_id=<?= $id ?>">
                     <div>
-                        <p><?= utf8_encode($truc['name']) ?>
-                            , <span class=".prix"><?= $truc['price'] ?></span>
-                            , <span class=".categorie"><?= $categories[$truc['category_id']]['name'] ?></span>
+                        <p><?= utf8_encode($article['name']) ?>
+                            , <span class=".prix"><?= $article['price'] ?></span>
+                            , <span class=".categorie"><?= $categories[$article['category_id']]['name'] ?></span>
                         </p>
-                        <img src="<?= $truc['picture'] ?>" alt=""/>
+                        <img src="<?= $article['picture'] ?>" alt=""/>
                     </div>
                 </a>
             </li>
